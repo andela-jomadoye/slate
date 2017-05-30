@@ -231,62 +231,6 @@
 <p>Welcome!! This is a Document Management System, with user and documents roles and privileges. Each document has access levels, the document defines which users can access it. 
 Also, each document specifies the date it was published, when it was last updated, and the author who published it.</p>
 
-<h1 id="tech-stack">Tech Stack</h1>
-
-<ul>
-<li>[React] - A javascript library for building user interfaces</li>
-<li>[Redux] - A predictable state container for JavaScript apps.</li>
-<li>[Enzyme] - A JavaScript Testing utility for React</li>
-<li>[node.js] - evented I/O for the backend</li>
-<li>[Express] - fast node.js network app framework</li>
-<li>[Webpack] - the streaming build system</li>
-<li>[Sequelize] - Sequelize is a promise-based ORM for Node.js and io.js.</li>
-<li>[JWT] - To authenticate routes</li>
-<li>[Postgresql and Sequelize ORM]</li>
-<li>[Material-css] - Material design components for react</li>
-<li>[React-materialize] - Material design components for react</li>
-<li>[Babel] - A javascript compiler</li>
-<li>[eslint] - Lints JavaScript</li>
-<li>[Mocha] - JavaScript testing library</li>
-<li>[webpack] - Bundler with plugin system and integrated development server</li>
-</ul>
-
-<h1 id="limitations">Limitations</h1>
-
-<p>The limitations to the Document Management System API are as follows:</p>
-
-<ul>
-<li>Users can only create plain textual documents and retrieve same when needed. </li>
-<li>Users cannot share documents with people, but can make document <code class="prettyprint">public</code> to make it available to other users.</li>
-<li>Users login and obtain a token which is verified on every request, but users cannot logout (nullify the token), however tokens become invalid when it expires (after 1 day).</li>
-</ul>
-
-<h1 id="contributing">Contributing</h1>
-
-<ol>
-<li>Fork this repository to your GitHub account</li>
-<li>Clone the forked repository and cd into it</li>
-<li><p>Create a .env file in the root of the project using the sample .env.sample in the root directory</p></li>
-<li><p>Install all dependencies by running this command below in your terminal/shell
-<code class="prettyprint">
-npm install
-</code></p></li>
-<li><p>Run the command below in your terminal/shell (initializes and seeds the database tables)
-<code class="prettyprint">
-npm db:migrate
-npm db:seed
-</code></p></li>
-<li><p>To run the development server enter the command below in your terminal/shell
-<code class="prettyprint">
-npm run start
-</code></p></li>
-<li><p>Run the tests via <code class="prettyprint">npm test</code> to get familliar with the features of the code base</p></li>
-<li><p>Create your feature branch</p></li>
-<li><p>Commit your changes</p></li>
-<li><p>Push to the remote branch</p></li>
-<li><p>Open a Pull Request</p></li>
-</ol>
-
 <h1 id="endpoints">Endpoints</h1>
 
 <h2 id="get-all-roles">Get all roles</h2>
@@ -863,6 +807,62 @@ npm run start
 <blockquote>
 <p>Owner or Admin access is required to consume this API.</p>
 </blockquote>
+
+<h1 id="tech-stack">Tech Stack</h1>
+
+<ul>
+<li>[React] - A javascript library for building user interfaces</li>
+<li>[Redux] - A predictable state container for JavaScript apps.</li>
+<li>[Enzyme] - A JavaScript Testing utility for React</li>
+<li>[node.js] - evented I/O for the backend</li>
+<li>[Express] - fast node.js network app framework</li>
+<li>[Webpack] - the streaming build system</li>
+<li>[Sequelize] - Sequelize is a promise-based ORM for Node.js and io.js.</li>
+<li>[JWT] - To authenticate routes</li>
+<li>[Postgresql and Sequelize ORM]</li>
+<li>[Material-css] - Material design components for react</li>
+<li>[React-materialize] - Material design components for react</li>
+<li>[Babel] - A javascript compiler</li>
+<li>[eslint] - Lints JavaScript</li>
+<li>[Mocha] - JavaScript testing library</li>
+<li>[webpack] - Bundler with plugin system and integrated development server</li>
+</ul>
+
+<h1 id="limitations">Limitations</h1>
+
+<p>The limitations to the Document Management System API are as follows:</p>
+
+<ul>
+<li>Users can only create plain textual documents and retrieve same when needed. </li>
+<li>Users cannot share documents with people, but can make document <code class="prettyprint">public</code> to make it available to other users.</li>
+<li>Users login and obtain a token which is verified on every request, but users cannot logout (nullify the token), however tokens become invalid when it expires (after 1 day).</li>
+</ul>
+
+<h1 id="contributing">Contributing</h1>
+
+<ol>
+<li>Fork this repository to your GitHub account</li>
+<li>Clone the forked repository and cd into it</li>
+<li><p>Create a .env file in the root of the project using the sample .env.sample in the root directory</p></li>
+<li><p>Install all dependencies by running this command below in your terminal/shell
+<code class="prettyprint">
+npm install
+</code></p></li>
+<li><p>Run the command below in your terminal/shell (initializes and seeds the database tables)
+<code class="prettyprint">
+npm db:migrate
+npm db:seed
+</code></p></li>
+<li><p>To run the development server enter the command below in your terminal/shell
+<code class="prettyprint">
+npm run start
+</code></p></li>
+<li><p>Run the tests via <code class="prettyprint">npm test</code> to get familliar with the features of the code base</p></li>
+<li><p>Create your feature branch</p></li>
+<li><p>Commit your changes</p></li>
+<li><p>Push to the remote branch</p></li>
+<li><p>Open a Pull Request</p></li>
+</ol>
 
           <h1 id="errors">Errors</h1>
 
