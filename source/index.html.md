@@ -2,9 +2,6 @@
 title: API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
   - javascript
 
 toc_footers:
@@ -21,55 +18,6 @@ search: true
 
 Welcome!! This is a Document Management System, with user and documents roles and privileges. Each document has access levels, the document defines which users can access it. 
 Also, each document specifies the date it was published, when it was last updated, and the author who published it.
-
-# Tech Stack
-
-* [React] - A javascript library for building user interfaces
-* [Redux] - A predictable state container for JavaScript apps.
-* [Enzyme] - A JavaScript Testing utility for React
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework
-* [Webpack] - the streaming build system
-* [Sequelize] - Sequelize is a promise-based ORM for Node.js and io.js.
-* [JWT] - To authenticate routes
-* [Postgresql and Sequelize ORM]
-* [Material-css] - Material design components for react
-* [React-materialize] - Material design components for react
-* [Babel] - A javascript compiler
-* [eslint] - Lints JavaScript
-* [Mocha] - JavaScript testing library
-* [webpack] - Bundler with plugin system and integrated development server
-
-# Limitations
-The limitations to the Document Management System API are as follows:
-
-* Users can only create plain textual documents and retrieve same when needed. 
-* Users cannot share documents with people, but can make document `public` to make it available to other users.
-* Users login and obtain a token which is verified on every request, but users cannot logout (nullify the token), however tokens become invalid when it expires (after 1 day).
-
-# Contributing
-1. Fork this repository to your GitHub account
-2. Clone the forked repository and cd into it
-3. Create a .env file in the root of the project using the sample .env.sample in the root directory
-
-5. Install all dependencies by running this command below in your terminal/shell
-    ````
-    npm install
-    ````
-6. Run the command below in your terminal/shell (initializes and seeds the database tables)
-    ```` 
-    npm db:migrate
-    npm db:seed
-    ````
-7. To run the development server enter the command below in your terminal/shell
-    ````
-    npm run start
-    ````
-8. Run the tests via `npm test` to get familliar with the features of the code base
-8. Create your feature branch
-9. Commit your changes
-10. Push to the remote branch
-11. Open a Pull Request
 
 # Endpoints
 
@@ -584,3 +532,53 @@ The limitations to the Document Management System API are as follows:
 
 
 > Owner or Admin access is required to consume this API.
+
+# Tech Stack
+
+* [React] - A javascript library for building user interfaces
+* [Redux] - A predictable state container for JavaScript apps.
+* [Enzyme] - A JavaScript Testing utility for React
+* [node.js] - evented I/O for the backend
+* [Express] - fast node.js network app framework
+* [Webpack] - the streaming build system
+* [Sequelize] - Sequelize is a promise-based ORM for Node.js and io.js.
+* [JWT] - To authenticate routes
+* [Postgresql and Sequelize ORM]
+* [Material-css] - Material design components for react
+* [React-materialize] - Material design components for react
+* [Babel] - A javascript compiler
+* [eslint] - Lints JavaScript
+* [Mocha] - JavaScript testing library
+* [webpack] - Bundler with plugin system and integrated development server
+
+# Limitations
+The limitations to the Document Management System API are as follows:
+
+* Users can only create plain textual documents and retrieve same when needed. 
+* Users cannot share documents with people, but can make document `public` to make it available to other users.
+* Users login and obtain a token which is verified on every request, but users cannot logout (nullify the token), however tokens become invalid when it expires (after 1 day).
+
+# Contributing
+1. Fork this repository to your GitHub account
+2. Clone the forked repository and cd into it
+3. Create a .env file in the root of the project using the sample .env.sample in the root directory
+
+5. Install all dependencies by running this command below in your terminal/shell
+    ````
+    npm install
+    ````
+6. Run the command below in your terminal/shell (initializes and seeds the database tables)
+    ```` 
+    npm db:migrate
+    npm db:seed
+    ````
+7. To run the development server enter the command below in your terminal/shell
+    ````
+    npm run start
+    ````
+8. Run the tests via `npm test` to get familliar with the features of the code base
+8. Create your feature branch
+9. Commit your changes
+10. Push to the remote branch
+11. Open a Pull Request
+
