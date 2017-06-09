@@ -9,7 +9,6 @@ toc_footers:
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
 
 search: true
 ---
@@ -19,7 +18,7 @@ search: true
 Welcome!! This is a Document Management System, with user and documents roles and privileges. Each document has access levels, the document defines which users can access it. 
 Also, each document specifies the date it was published, when it was last updated, and the author who published it.
 
-# Endpoints
+# Roles
 
 ## Get all roles
 
@@ -67,12 +66,11 @@ Also, each document specifies the date it was published, when it was last update
 
 ## Create a role
 
-> Requuest
+> Request
 
 ```json
 {
   "title": "jedidiah is a boss",
-  }
 }
 ```
 
@@ -120,7 +118,7 @@ Also, each document specifies the date it was published, when it was last update
 ```
 
 ### Request
-- Endpoint: DELETE: `api/roles`
+- Endpoint: DELETE: `api/roles/:roleId`
 - Body `(application/json)`
 
 ### Response
@@ -130,6 +128,49 @@ Also, each document specifies the date it was published, when it was last update
 
 
 > Admin access is required to consume this API.
+
+# User
+
+## Create a user
+
+> Request
+
+```json
+{
+  "id": 3,
+  "username": "jed",
+  "fullname": "Omadoye Jedidiah",
+  "email": "jed@email.com",
+  "password": "jedidiah"
+}
+```
+
+> Response
+
+```json
+{
+  "message": "User successfully created",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjo1LCJ1c2VybmFtZSI6ImplZCIsImZ1bGxuYW1lIjoiT21hZG95ZSBKZWRpZGlhaCIsInJvbGVJZCI6MywiZW1haWwiOiJqZWRAZW1haWwuY29tIn0sImlhdCI6MTQ5NzAyMDc1NCwiZXhwIjoxNDk3MTA3MTU0fQ.r_OFRMJNRBr1oYhdiH4m9Xt01i494LMSuUWgfY0mTbw",
+  "user": {
+    "roleId": 3,
+    "id": 5,
+    "username": "jed",
+    "email": "jed@email.com",
+    "password": "$2a$08$5dAhCT8d/6H6NMZRidFPdOZ6yl22Kh3nJC8dq/ynAKzyRtfOoG6la",
+    "fullname": "Omadoye Jedidiah",
+    "updatedAt": "2017-06-09T15:05:54.850Z",
+    "createdAt": "2017-06-09T15:05:54.850Z"
+  }
+}
+```
+
+### Request
+- Endpoint: POST: `api/users`
+- Body `(application/json)`
+
+### Response
+- Status: `201: Created`
+- Body `(application/json)`
 
 ## Get all users
 
@@ -292,6 +333,148 @@ Also, each document specifies the date it was published, when it was last update
 
 
 > Owner or Admin access is required to consume this API.
+
+## Login User
+
+> Request
+
+```json
+{
+  "query": "dede",
+  "password": "password"
+}
+```
+
+> Response
+
+```json
+{
+  "message": "User logged in",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozLCJ1c2VybmFtZSI6ImRlZGUiLCJmdWxsbmFtZSI6ImRlZGUiLCJyb2xlSWQiOjEsImVtYWlsIjoiQmVybmFyZDM1QHlhaG9vLmNvbSJ9LCJpYXQiOjE0OTcwMjE5OTEsImV4cCI6MTQ5NzEwODM5MX0.ZdxbE3CeEABRaKwLf23iTKC_UcjOcz0YKYngQSYkID0"
+}
+```
+
+### Request
+- Endpoint: PUT: `users/login`
+- Body `(application/json)`
+
+### Response
+- Status: `200: OK`
+- Body `(application/json)`
+
+
+## Logout User
+
+> Response
+
+```json
+{
+  "message": "User logged out"
+}
+```
+
+### Request
+- Endpoint: POST: `users/logout`
+- Body `(application/json)`
+
+### Response
+- Status: `200: OK`
+- Body `(application/json)`
+
+
+## Search a User by Username
+
+> Request
+
+```json
+{
+  "query": "SlimJed1"
+}
+```
+
+> Response
+
+```json
+{
+  "message": "This is your user.",
+  "user": [
+    {
+      "id": 4,
+      "fullname": "Omadoye Jedidiah",
+      "username": "SlimJed1",
+      "email": "jedd@email.com",
+      "roleId": 3,
+      "password": "$2a$08$9ddxfFTraUVlyTNYtAS5p.TOe7zcoaFOkHpfSwpkGo5utr1.hMCwG",
+      "createdAt": "2017-05-27T11:28:54.221Z",
+      "updatedAt": "2017-05-27T11:28:54.221Z",
+      "documents": []
+    },
+    {
+      "id": 7,
+      "fullname": "Omadoye Jedidiah",
+      "username": "SlimJed11",
+      "email": "jedd1@email.com",
+      "roleId": 1,
+      "password": "$2a$08$2XUYM2X9ESdwdSip6mgbC.aNUflqXfA/tywRfNNQZcxd5UKJIO8Dm",
+      "createdAt": "2017-05-30T14:02:10.970Z",
+      "updatedAt": "2017-05-30T14:02:10.970Z",
+      "documents": []
+    }
+  ]
+}
+```
+
+### Request
+- Endpoint: PUT: `api/documents/:username`
+- Body `(application/json)`
+
+### Response
+- Status: `200: OK`
+- Body `(application/json)`
+
+
+
+> Owner or Admin access is required to consume this API.
+
+# Document 
+
+## create a document
+
+> Request
+
+```json
+{
+  "title": "jed",
+  "body": "Omadoye Jedidiah",
+}
+```
+
+> Response
+
+```json
+{
+  "message": "Document created successfully.",
+  "document": {
+    "access": "public",
+    "id": 20,
+    "title": "jed",
+    "body": "Omadoye Jed",
+    "userId": 5,
+    "ownerRoleId": 3,
+    "updatedAt": "2017-06-09T15:11:52.468Z",
+    "createdAt": "2017-06-09T15:11:52.468Z"
+  }
+}
+```
+
+### Request
+- Endpoint: POST: `api/documents`
+- Body `(application/json)`
+
+### Response
+- Status: `201: Created`
+- Body `(application/json)`
+
 
 ## Get all Documents
 
@@ -520,59 +703,6 @@ Also, each document specifies the date it was published, when it was last update
 
 > Owner or Admin access is required to consume this API.
 
-## Search a User by Username
-
-> Response
-
-```json
-{
-  "query": "SlimJed1"
-}
-```
-
-> Response
-
-```json
-{
-  "message": "This is your user.",
-  "user": [
-    {
-      "id": 4,
-      "fullname": "Omadoye Jedidiah",
-      "username": "SlimJed1",
-      "email": "jedd@email.com",
-      "roleId": 3,
-      "password": "$2a$08$9ddxfFTraUVlyTNYtAS5p.TOe7zcoaFOkHpfSwpkGo5utr1.hMCwG",
-      "createdAt": "2017-05-27T11:28:54.221Z",
-      "updatedAt": "2017-05-27T11:28:54.221Z",
-      "documents": []
-    },
-    {
-      "id": 7,
-      "fullname": "Omadoye Jedidiah",
-      "username": "SlimJed11",
-      "email": "jedd1@email.com",
-      "roleId": 1,
-      "password": "$2a$08$2XUYM2X9ESdwdSip6mgbC.aNUflqXfA/tywRfNNQZcxd5UKJIO8Dm",
-      "createdAt": "2017-05-30T14:02:10.970Z",
-      "updatedAt": "2017-05-30T14:02:10.970Z",
-      "documents": []
-    }
-  ]
-}
-```
-
-### Request
-- Endpoint: PUT: `api/documents/:username`
-- Body `(application/json)`
-
-### Response
-- Status: `200: OK`
-- Body `(application/json)`
-
-
-
-> Owner or Admin access is required to consume this API.
 
 # Tech Stack
 
