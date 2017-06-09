@@ -67,6 +67,15 @@ Also, each document specifies the date it was published, when it was last update
 
 ## Create a role
 
+> Requuest
+
+```json
+{
+  "title": "jedidiah is a boss",
+  }
+}
+```
+
 > Response
 
 ```json
@@ -244,6 +253,15 @@ Also, each document specifies the date it was published, when it was last update
 
 ## Update a user by Id
 
+> Request
+
+```json
+{
+    "fullname": "Omadoye Jedidiah",
+    "username": "dede",
+}
+```
+
 > Response
 
 ```json
@@ -420,6 +438,15 @@ Also, each document specifies the date it was published, when it was last update
 
 ## Update a Document by Id
 
+> Request
+
+```json
+{
+  "title": "test document 4",
+  "body": "Cum consectetur omnis illum facilis atque et explicabo deleniti. Dolorem quo ab repudiandae qui est. Repellendus error sit ut. Quia sit sed suscipit iusto.",
+}
+```
+
 > Response
 
 ```json
@@ -452,7 +479,13 @@ Also, each document specifies the date it was published, when it was last update
 
 ## Search a Document by title
 
-> Response
+> Request
+
+```json
+{
+  "query": "test document 13"
+}
+```
 
 ```json
 {
@@ -488,6 +521,14 @@ Also, each document specifies the date it was published, when it was last update
 > Owner or Admin access is required to consume this API.
 
 ## Search a User by Username
+
+> Response
+
+```json
+{
+  "query": "SlimJed1"
+}
+```
 
 > Response
 
